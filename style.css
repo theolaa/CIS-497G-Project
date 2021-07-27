@@ -408,7 +408,7 @@ button:hover {
 .valid:before {
   position: relative;
   left: -35px;
-  content: "✔";
+  content: "✓";
 }
 
 /* Add a red text color and an "x" when the requirements are wrong */
@@ -419,5 +419,5 @@ button:hover {
 .invalid:before {
   position: relative;
   left: -35px;
-  content: "✖";
+  content: "X";
 }
