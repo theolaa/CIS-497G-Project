@@ -8,12 +8,13 @@ use CGI;
 my $query = new CGI();
  
 my %data;
-$data{firstname} = $query->param('firstname');
+$data{firstname} =$query->param('firstname');
+$data{firstname}=~s/(<([^>]+)>)/""/ig;
 $data{lastname} = $query->param('lastname');
 $data{email} = $query->param('email');
-$data{country} = $query->param('country');
-$data{psw} = $query->param('psw');
-$data{psw_repeat} = $query->param('psw_repeat');
+#$data{country} = $query->param('country');
+#$data{psw} = $query->param('psw');
+#$data{psw_repeat} = $query->param('psw_repeat');
  
 # print $query->header;
 print "Content-type: text/html\n\n";
@@ -82,7 +83,6 @@ document.body.innerHTML += "<button type=\\"button\\" onclick=\\"sendEmail()\\" 
 function sendEmail() {
 	result = document.getElementById("BMI-result").innerText;
 	bmi = document.getElementById("BMI").innerText;
-	///*
 	Email.send({
 	Host: "smtp.elasticemail.com",
 	Username : "account_validation\@learn.taliaq.com",
@@ -101,7 +101,6 @@ function sendEmail() {
 		}
 	}
 	);
-	//*/
 	}
 </script>
 </body>
