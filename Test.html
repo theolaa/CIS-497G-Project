@@ -272,6 +272,13 @@
           }
         }
 
+        var form = document.getElementById("f1");
+              function nosubmit(event)
+              {
+                  event.preventDefault();
+              }
+              form.addEventListener("submit",nosubmit);
+
          function passcheck()
         {
           if (mypass.value == mypassrp.value)
@@ -280,13 +287,7 @@
             }
             else{
               alert("Password Don't Match");
-              var form = document.getElementById("f1");
-              function nosubmit(e)
-              {
-                  e.preventDefault();
-              }
-
-              form.addEventListener("submit",nosubmit);
+              
             }
           }
         </script>
