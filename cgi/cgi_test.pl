@@ -35,7 +35,7 @@ print ("<h1> $data{firstname}, Congratulations your account is successfully crea
 print ("<h2> Lets calculate your BMI! </h2>");
 print <<HTML;
 
-<div name="f1" class="modal-content">
+<div id="div1" class="modal-content">
         <div class="container2">
           <p>Please fill in the details to find your BMI.</p>
           <hr>
@@ -83,7 +83,7 @@ else{
 alert("Please Fill in everything correctly");
 }
 }
-document.body.innerHTML += "<button type=\\"button\\" onclick=\\"sendEmail()\\" class=\\"signupbtn\\"> Email results to: $data{email} </button>"
+document.getElementByID("div1").innerHTML += "<button type=\\"button\\" onclick=\\"sendEmail()\\" class=\\"signupbtn\\"> Email results to: $data{email} </button>"
 
 
 function sendEmail() {
@@ -106,9 +106,9 @@ function sendEmail() {
 			function(message) {
 			console.log("Email Status: " + message);
 			if (message == "OK") {
-				document.body.innerHTML += "<br/><br/>Email sent - check your junk folder!";
+				document.getElementByID("div1").innerHTML += "<br/><br/><br/><br/>Email sent - check your junk folder!";
 			} else {
-				document.body.innerHTML += "<br/><br/>" + message;
+				document.getElementByID("div1").innerHTML += "<br/><br/>" + message;
 			}
 		}
 		);
