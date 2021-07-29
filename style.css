@@ -227,7 +227,7 @@ pre {
   }
 
  /* -------------------Contact Form--------------------------*/
- input[type=text], select, textarea, input[type=password], input[type=email]{
+ input[type=text], select, textarea, input[type=password], input[type=email], input[type=number]{
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -277,7 +277,7 @@ li.active > button.nav-button {
 }*/
 
 /* Full-width input fields */
-input[type=text], input[type=password], input[type=email] {
+input[type=text], input[type=password], input[type=email], input[type=number]{
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -287,7 +287,7 @@ input[type=text], input[type=password], input[type=email] {
 }
 
 /* Add a background color when the inputs get focus */
-input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=number] {
   background-color: #ddd;
   outline: none;
 }
