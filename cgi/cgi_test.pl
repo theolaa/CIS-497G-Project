@@ -46,12 +46,10 @@ print <<HTML;
         <input type="number" id="weight" name="weight" placeholder="Your weight in kg..">
 
         <button type="submit" class="signupbtn" onclick="calculateBMI()">Calculate BMI</button>
-		<button type="submit" class="signupbtn" onclick="calculateBMI()">Email $data{email}</button>
+		<button type="submit" class="signupbtn" onclick="sendEmail()">Email results to: $data{email}</button>
 <br/><br/><br/><br/>
         <p id="BMI"> </p>
         <p id="BMI-result"> </p>
-		<div id="emaildiv"> </div>
-		<p id="emailbtn"> </p>
         </div>
 </div>
 HTML
@@ -87,7 +85,7 @@ alert("Please Fill in everything correctly");
 }
 }
 
-document.write("<button style=\\"left:20px\\" type=\\"button\\" onclick=\\"sendEmail()\\" class=\\"signupbtn\\"> Email results to: $data{email} </button>");
+//document.write("<button style=\\"left:20px\\" type=\\"button\\" onclick=\\"sendEmail()\\" class=\\"signupbtn\\"> Email results to: $data{email} </button>");
 
 
 function sendEmail() {
