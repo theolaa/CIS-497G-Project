@@ -143,11 +143,11 @@
           if(mypass.value.match(lowerCaseLetters)) {  
             letter.classList.remove("invalid");
             letter.classList.add("valid");
-            flag[0]=1;
+     
           } else {
             letter.classList.remove("valid");
             letter.classList.add("invalid");
-            flag[0]=0;
+         
           }
           
           // Validate capital letters
@@ -155,11 +155,11 @@
           if(mypass.value.match(upperCaseLetters)) {  
             capital.classList.remove("invalid");
             capital.classList.add("valid");
-            flag[1]=1;
+       
           } else {
             capital.classList.remove("valid");
             capital.classList.add("invalid");
-            flag[1]=0;
+        
           }
         
           // Validate numbers
@@ -167,11 +167,11 @@
           if(mypass.value.match(numbers)) {  
             number.classList.remove("invalid");
             number.classList.add("valid");
-            flag[2]=1;
+         
           } else {
             number.classList.remove("valid");
             number.classList.add("invalid");
-            flag[2]=0;
+          
           }
           
           // Validate Special Char
@@ -179,33 +179,23 @@
           if(mypass.value.match(specialchar)) {  
             char.classList.remove("invalid");
             char.classList.add("valid");
-            flag[3]=1;
+          
           } else {
             char.classList.remove("valid");
             char.classList.add("invalid");
-            flag[3]=0;
+           
           }
           
           // Validate length
           if(mypass.value.length >= 8) {
             length.classList.remove("invalid");
             length.classList.add("valid");
-            flag[4]=1;
+     
           } else {
             length.classList.remove("valid");
             length.classList.add("invalid");
-            flag[4]=0;
-          }
-        }
-
-        for (var i=0;i<5;i++){
-          if (flag[i]==0){
-            alert("Password not as per requirements");
-          }
-          else{
-            flag=new Array(5);
-          }
           
+          }
 
         }
       
@@ -228,11 +218,11 @@
           if(mypassrp.value.match(lowerCaseLetters)) {  
             letter.classList.remove("invalid");
             letter.classList.add("valid");
-            flag[0]=1;
+          
           } else {
             letter.classList.remove("valid");
             letter.classList.add("invalid");
-            flag[0]=0;
+         
           }
           
           // Validate capital letters
@@ -240,11 +230,11 @@
           if(mypassrp.value.match(upperCaseLetters)) {  
             capital.classList.remove("invalid");
             capital.classList.add("valid");
-            flag[1]=1;
+        
           } else {
             capital.classList.remove("valid");
             capital.classList.add("invalid");
-            flag[1]=0;
+          
           }
         
           // Validate numbers
@@ -252,11 +242,11 @@
           if(mypassrp.value.match(numbers)) {  
             number.classList.remove("invalid");
             number.classList.add("valid");
-            flag[2]=1;
+            
           } else {
             number.classList.remove("valid");
             number.classList.add("invalid");
-            flag[2]=0;
+    
           }
           
           // Validate Special Char
@@ -264,36 +254,32 @@
           if(mypassrp.value.match(specialchar)) {  
             char.classList.remove("invalid");
             char.classList.add("valid");
-            flag[3]=1;
+       
           } else {
             char.classList.remove("valid");
             char.classList.add("invalid");
-            flag[3]=0;
+
           }
           
           // Validate length
           if(mypassrp.value.length >= 8) {
             length.classList.remove("invalid");
             length.classList.add("valid");
-            flag[4]=1;
+           
           } else {
             length.classList.remove("valid");
             length.classList.add("invalid");
           }
         }
-
-        for (var i=0;i<5;i++){
-          if (flag[i]==0){
-            alert("Password not as per requirements");
-          }
-        }
-
-        function passcheck()
+        
+         function passcheck()
         {
-          alert("shout");
           if (mypass.value == mypassrp.value)
             {
                 alert("Passwords Match");
+            }
+            else{
+              alert("Password Don't Match");
             }
           }
         </script>
