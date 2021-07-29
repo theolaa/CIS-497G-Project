@@ -272,21 +272,18 @@
           }
         }
 
-        var form = document.getElementById("f1");
-              function nosubmit(event)
-              {
-                  event.preventDefault();
-              }
-              form.addEventListener("submit",nosubmit);
+       
 
          function passcheck()
         {
           if (mypass.value == mypassrp.value)
             {
                 alert("Passwords Match");
+                return true;
             }
             else{
               alert("Password Don't Match");
+              return false;
               
             }
           }
