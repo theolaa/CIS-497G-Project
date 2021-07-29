@@ -41,7 +41,7 @@
     
           <div class="clearfix">
             <button type="button" onclick="document.getElementById('myModal').style.display='none'" class="cancelbtn">Cancel</button>
-            <button type="submit" class="signupbtn">Sign In</button>
+            <button type="button" class="signupbtn">Sign In</button>
           </div>
           </div>
           <div id="message">
@@ -272,7 +272,9 @@
           }
         }
 
-       
+        var form = document.getElementById("f1");
+function handleForm(event) { event.preventDefault(); } 
+form.addEventListener('submit', handleForm);
 
          function passcheck()
         {
@@ -282,7 +284,7 @@
             }
             else{
               alert("Password Don't Match");
-              window.stop();
+              
             }
           }
         </script>
