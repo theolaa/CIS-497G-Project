@@ -28,10 +28,10 @@
             </select>
 
           <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" pattern="[A-Za-z0-9!@#$%^&*+`~=?\|<>/]{8}" class="input" name="psw" id="psw" required>
+          <input type="password" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*+`~=?\|<>/]).{8,}" class="input" name="psw" id="psw" required>
     
           <label for="psw-repeat"><b>Repeat Password</b></label>
-          <input type="password" placeholder="Repeat Password" pattern="[A-Za-z0-9!@#$%^&*+`~=?\|<>/]{8}" name="psw-repeat" class="input" id="psw-repeat" required>
+          <input type="password" placeholder="Repeat Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*+`~=?\|<>/]).{8,}" name="psw-repeat" class="input" id="psw-repeat" required>
           
           <label>
             <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -290,6 +290,7 @@
 
         function passcheck()
         {
+          alert("shout");
           if (mypass.value == mypassrp.value)
             {
                 alert("Passwords Match");
