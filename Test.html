@@ -103,13 +103,6 @@
         }
 
         email.onkeyup = function() {
-          var numbers = /[0-9]/g;
-          if(email.value.match(numbers)) {  
-            
-            alert("Invalid Input");
-            email.value ="";
-          }
-          
           // Sanitize for Special Char except @
           var specialchar = /[!#$%^&*+`~=?\|<>/]/g;
           if(email.value.match(specialchar)) {  
