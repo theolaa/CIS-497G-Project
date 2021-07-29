@@ -56,25 +56,25 @@
       </form>
       <script language="javascript">
         //-------------SANITIZE TEXT----------------
-        var name = document.getElementById("fname");
+        var fname = document.getElementById("fname");
         var lname = document.getElementById("lname");
         var email = document.getElementById("email");
 
         //Sanitize for numbers
-        name.onkeyup = function() {
+        fname.onkeyup = function() {
           var numbers = /[0-9]/g;
-          if(name.value.match(numbers)) {  
+          if(fname.value.match(numbers)) {  
             
             alert("Invalid Input");
-            name.value ="";
+            fname.value ="";
           }
           
           // Sanitize for Special Char except @
           var specialchar = /[!#$%^&*+`~=?\|<>/]/g;
-          if(name.value.match(specialchar)) {  
+          if(fname.value.match(specialchar)) {  
             
             alert("Invalid Input");
-            name.value ="";
+            fname.value ="";
           }
         }
         lname.onkeyup = function() {
