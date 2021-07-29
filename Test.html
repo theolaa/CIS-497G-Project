@@ -273,20 +273,20 @@
         }
 
         var form = document.getElementById("f1");
-function handleForm(event) { event.preventDefault(); } 
-form.addEventListener('submit', handleForm);
 
-         function passcheck()
-        {
-          if (mypass.value == mypassrp.value)
+function handleForm(event) { 
+  if (mypass.value == mypassrp.value)
             {
                 alert("Passwords Match");
             }
             else{
               alert("Password Don't Match");
               
-            }
-          }
+            event.preventDefault(); } 
+}
+
+form.addEventListener('submit', handleForm);
+
         </script>
     </body>
 </html>
