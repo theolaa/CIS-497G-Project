@@ -49,6 +49,7 @@ print <<HTML;
 <br/><br/><br/><br/>
         <p id="BMI"> </p>
         <p id="BMI-result"> </p>
+		<p id="emailbtn"> </p>
         </div>
 </div>
 HTML
@@ -83,7 +84,7 @@ else{
 alert("Please Fill in everything correctly");
 }
 }
-document.getElementByID("div1").innerHTML += "<button type=\\"button\\" onclick=\\"sendEmail()\\" class=\\"signupbtn\\"> Email results to: $data{email} </button>"
+document.getElementByID("emailbtn").innerHTML += "<button type=\\"button\\" onclick=\\"sendEmail()\\" class=\\"signupbtn\\"> Email results to: $data{email} </button>"
 
 
 function sendEmail() {
@@ -106,9 +107,9 @@ function sendEmail() {
 			function(message) {
 			console.log("Email Status: " + message);
 			if (message == "OK") {
-				document.getElementByID("div1").innerHTML += "<br/><br/><br/><br/>Email sent - check your junk folder!";
+				document.getElementByID("emailbtn").innerHTML += "Email sent - check your junk folder!";
 			} else {
-				document.getElementByID("div1").innerHTML += "<br/><br/>" + message;
+				document.getElementByID("emailbtn").innerHTML += "<br/><br/>" + message;
 			}
 		}
 		);
