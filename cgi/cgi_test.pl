@@ -11,7 +11,9 @@ my %data;
 $data{firstname} =$query->param('firstname');
 $data{firstname}=~s/(<([^>]+)>)/""/ig;
 $data{lastname} = $query->param('lastname');
+$data{lastname}=~s/(<([^>]+)>)/""/ig;
 $data{email} = $query->param('email');
+$data{email}=~s/(<([^>]+)>)/""/ig;
 #$data{country} = $query->param('country');
 #$data{psw} = $query->param('psw');
 #$data{psw_repeat} = $query->param('psw_repeat');
@@ -38,10 +40,10 @@ print <<HTML;
           <p>Please fill in the details to find your BMI.</p>
           <hr>
           <label for="Height">Height</label>
-        <input type="text" id="height" name="height" placeholder="Your height  in cm ..">
+        <input type="text" id="height" name="height" pattern="[0-9].{,3}" placeholder="Your height  in cm ..">
 
         <label for="weight">Weight</label>
-        <input type="text" id="weight" name="weight" placeholder="Your weight in kg..">
+        <input type="text" id="weight" name="weight" pattern="[0-9].{,3}" placeholder="Your weight in kg..">
 
         <button type="submit" class="signupbtn" onclick="calculateBMI()">Calculate BMI</button>
 
@@ -52,8 +54,11 @@ print <<HTML;
 HTML
 
 print <<HTML;
+
 <script language="JavaScript">
-var email="$data{email}"
+
+var email="$data{email}";
+
 function calculateBMI() {
 var weight = document.getElementById("weight").value;
 var height = document.getElementById("height").value;
