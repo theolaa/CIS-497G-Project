@@ -49,6 +49,7 @@ print <<HTML;
 <br/><br/><br/><br/>
         <p id="BMI"> </p>
         <p id="BMI-result"> </p>
+		<div id="emaildiv"> </div>
 		<p id="emailbtn"> </p>
         </div>
 </div>
@@ -84,7 +85,8 @@ else{
 alert("Please Fill in everything correctly");
 }
 }
-document.getElementByID("emailbtn").innerHTML += "<button type=\\"button\\" onclick=\\"sendEmail()\\" class=\\"signupbtn\\"> Email results to: $data{email} </button>"
+
+document.getElementByID("emaildiv").innerHTML += "<button type=\\"button\\" onclick=\\"sendEmail()\\" class=\\"signupbtn\\"> Email results to: $data{email} </button>"
 
 
 function sendEmail() {
