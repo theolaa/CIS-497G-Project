@@ -386,7 +386,7 @@ button:hover {
 }
 /*--------------------------------------------*/
 
-#message {
+#message, #message2 {
   display:none;
   background: #f1f1f1;
   color: #000;
@@ -395,7 +395,7 @@ button:hover {
   margin-top: 10px;
 }
 
-#message p {
+#message, #message2 p {
   padding: 10px 35px;
   font-size: 18px;
 }
