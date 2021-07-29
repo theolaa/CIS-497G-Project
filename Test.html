@@ -28,7 +28,7 @@
             </select>
 
           <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" pattern=".{8,}" class="input" name="psw" id="psw" required>
+          <input type="password" placeholder="Enter Password" pattern="/[0-9]/{8,}" class="input" name="psw" id="psw" required>
     
           <label for="psw-repeat"><b>Repeat Password</b></label>
           <input type="password" placeholder="Repeat Password" pattern=".{8,}" name="psw-repeat" class="input" id="psw-repeat" required>
@@ -41,7 +41,7 @@
     
           <div class="clearfix">
             <button type="button" onclick="document.getElementById('myModal').style.display='none'" class="cancelbtn">Cancel</button>
-            <button type="submit" class="signupbtn">Sign</button>
+            <button type="submit" class="signupbtn" onsubmit="passcheck()">Sign</button>
           </div>
           </div>
           <div id="message">
@@ -287,10 +287,14 @@
             alert("Password not as per requirements");
           }
         }
+
+        function passcheck()
+        {
           if (mypass.value == mypassrp.value)
             {
                 alert("Passwords Match");
             }
+          }
         </script>
     </body>
 </html>
