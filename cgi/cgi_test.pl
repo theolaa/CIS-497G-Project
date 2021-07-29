@@ -40,10 +40,10 @@ print <<HTML;
           <p>Please fill in the details to find your BMI.</p>
           <hr>
           <label for="Height">Height</label>
-        <input type="text" id="height" name="height" pattern="[0-9].{,3}" placeholder="Your height  in cm ..">
+        <input type="number" id="height" name="height" placeholder="Your height  in cm ..">
 
         <label for="weight">Weight</label>
-        <input type="text" id="weight" name="weight" pattern="[0-9].{,3}" placeholder="Your weight in kg..">
+        <input type="number" id="weight" name="weight" placeholder="Your weight in kg..">
 
         <button type="submit" class="signupbtn" onclick="calculateBMI()">Calculate BMI</button>
 
