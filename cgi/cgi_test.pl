@@ -86,8 +86,7 @@ alert("Please Fill in everything correctly");
 }
 }
 
-document.getElementByID("emaildiv").innerHTML+="<button type=\\"button\\" onclick=\\"sendEmail()\\" class=\\"signupbtn\\"> Email results to: $data{email} </button>";
-document.getElementByID("emailbtn").innerHTML+="<button type=\\"button\\" onclick=\\"sendEmail()\\" class=\\"signupbtn\\"> Email results to: $data{email} </button>";
+document.write("<button style=\\"left:20px\\" type=\\"button\\" onclick=\\"sendEmail()\\" class=\\"signupbtn\\"> Email results to: $data{email} </button>");
 
 
 function sendEmail() {
