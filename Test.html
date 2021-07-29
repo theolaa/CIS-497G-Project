@@ -12,13 +12,13 @@
           <p>Please fill in this form to create an account.</p>
           <hr>
           <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <input type="text" id="fname" name="firstname" class="input" placeholder="Your name..">
 
         <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <input type="text" id="lname" name="lastname" class="input" placeholder="Your last name..">
 
           <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="email" required>
+          <input type="text" placeholder="Enter Email" id="email" name="email" required>
     
           <label for="country">Country</label>
             <select id="country" name="country">
@@ -28,10 +28,10 @@
             </select>
 
           <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+          <input type="password" placeholder="Enter Password" class="input" name="psw" id="psw" required>
     
           <label for="psw-repeat"><b>Repeat Password</b></label>
-          <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+          <input type="password" placeholder="Repeat Password" name="psw-repeat" class="input" id="psw-repeat" required>
           
           <label>
             <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -55,29 +55,83 @@
 
       </form>
       <script language="javascript">
-        var myInput = document.getElementById("psw");
-        var myInput2 = document.getElementById("psw-repeat");
+        //-------------SANITIZE TEXT----------------
+        var name = document.getElementById("fname");
+        var lname = document.getElementById("lname");
+        var email = document.getElementById("email");
+
+        //Sanitize for numbers
+        name.onkeyup = function() {
+          var numbers = /[0-9]/g;
+          if(mypass.value.match(numbers)) {  
+            
+            alert("Invalid Input")
+          }
+          
+          // Sanitize for Special Char except @
+          var specialchar = /[!#$%^&*+`~=?\|<>/]/g;
+          if(mypass.value.match(specialchar)) {  
+            
+            alert("Invalid Input")
+          }
+        }
+        lname.onkeyup = function() {
+          var numbers = /[0-9]/g;
+          if(mypass.value.match(numbers)) {  
+            
+            alert("Invalid Input")
+          }
+          
+          // Sanitize for Special Char except @
+          var specialchar = /[!#$%^&*+`~=?\|<>/]/g;
+          if(mypass.value.match(specialchar)) {  
+            
+            alert("Invalid Input")
+          }
+        }
+
+        email.onkeyup = function() {
+          var numbers = /[0-9]/g;
+          if(mypass.value.match(numbers)) {  
+            
+            alert("Invalid Input")
+          }
+          
+          // Sanitize for Special Char except @
+          var specialchar = /[!#$%^&*+`~=?\|<>/]/g;
+          if(mypass.value.match(specialchar)) {  
+            
+            alert("Invalid Input")
+          }
+        }
+
+        //----------PASSWORD AUTHENTICATION----------------
+        var mypass = document.getElementById("psw");
+        var mypassrp = document.getElementById("psw-repeat");
+
         var letter = document.getElementById("letter");
         var capital = document.getElementById("capital");
         var number = document.getElementById("number");
         var length = document.getElementById("length");
         var char = document.getElementById("specialchar");
-        
+       
+        // ------------PASSWORD----------------------
+
         // When the user clicks on the password field, show the message box
-        myInput.onfocus = function() {
+        mypass.onfocus = function() {
           document.getElementById("message").style.display = "block";
         }
         
         // When the user clicks outside of the password field, hide the message box
-        myInput.onblur = function() {
+        mypass.onblur = function() {
           document.getElementById("message").style.display = "none";
         }
         
         // When the user starts to type something inside the password field
-        myInput.onkeyup = function() {
+        mypass.onkeyup = function() {
           // Validate lowercase letters
           var lowerCaseLetters = /[a-z]/g;
-          if(myInput.value.match(lowerCaseLetters)) {  
+          if(mypass.value.match(lowerCaseLetters)) {  
             letter.classList.remove("invalid");
             letter.classList.add("valid");
           } else {
@@ -87,7 +141,7 @@
           
           // Validate capital letters
           var upperCaseLetters = /[A-Z]/g;
-          if(myInput.value.match(upperCaseLetters)) {  
+          if(mypass.value.match(upperCaseLetters)) {  
             capital.classList.remove("invalid");
             capital.classList.add("valid");
           } else {
@@ -97,7 +151,7 @@
         
           // Validate numbers
           var numbers = /[0-9]/g;
-          if(myInput.value.match(numbers)) {  
+          if(mypass.value.match(numbers)) {  
             number.classList.remove("invalid");
             number.classList.add("valid");
           } else {
@@ -107,7 +161,7 @@
           
           // Validate Special Char
           var specialchar = /[!@#$%^&*+`~=?\|<>/]/g;
-          if(myInput.value.match(specialchar)) {  
+          if(mypass.value.match(specialchar)) {  
             char.classList.remove("invalid");
             char.classList.add("valid");
           } else {
@@ -116,7 +170,7 @@
           }
           
           // Validate length
-          if(myInput.value.length >= 8) {
+          if(mypass.value.length >= 8) {
             length.classList.remove("invalid");
             length.classList.add("valid");
           } else {
@@ -124,17 +178,76 @@
             length.classList.add("invalid");
           }
         }
+      
+        
+        // ------------REPEAT PASSWORD----------------------
 
-        myInput2.onkeyup = function() {
-            if (myInput.value == myInput2.value)
+        // When the user clicks on the password field, show the message box
+        mypassrp.onfocus = function() {
+          document.getElementById("message").style.display = "block";
+        }
+        
+        // When the user clicks outside of the password field, hide the message box
+        mypassrp.onblur = function() {
+          document.getElementById("message").style.display = "none";
+        }
+        
+        // When the user starts to type something inside the password field
+        mypassrp.onkeyup = function() {
+          // Validate lowercase letters
+          var lowerCaseLetters = /[a-z]/g;
+          if(mypassrp.value.match(lowerCaseLetters)) {  
+            letter.classList.remove("invalid");
+            letter.classList.add("valid");
+          } else {
+            letter.classList.remove("valid");
+            letter.classList.add("invalid");
+          }
+          
+          // Validate capital letters
+          var upperCaseLetters = /[A-Z]/g;
+          if(mypassrp.value.match(upperCaseLetters)) {  
+            capital.classList.remove("invalid");
+            capital.classList.add("valid");
+          } else {
+            capital.classList.remove("valid");
+            capital.classList.add("invalid");
+          }
+        
+          // Validate numbers
+          var numbers = /[0-9]/g;
+          if(mypassrp.value.match(numbers)) {  
+            number.classList.remove("invalid");
+            number.classList.add("valid");
+          } else {
+            number.classList.remove("valid");
+            number.classList.add("invalid");
+          }
+          
+          // Validate Special Char
+          var specialchar = /[!@#$%^&*+`~=?\|<>/]/g;
+          if(mypassrp.value.match(specialchar)) {  
+            char.classList.remove("invalid");
+            char.classList.add("valid");
+          } else {
+            char.classList.remove("valid");
+            char.classList.add("invalid");
+          }
+          
+          // Validate length
+          if(mypassrp.value.length >= 8) {
+            length.classList.remove("invalid");
+            length.classList.add("valid");
+          } else {
+            length.classList.remove("valid");
+            length.classList.add("invalid");
+          }
+            if (mypass.value == mypassrp.value)
             {
                 alert("Passwords Match");
             }
         }
-function addRow()
-{
-
-}
+       
         </script>
     </body>
 </html>
