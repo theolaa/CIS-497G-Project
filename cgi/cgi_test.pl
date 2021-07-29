@@ -46,7 +46,7 @@ print <<HTML;
         <input type="number" id="weight" name="weight" placeholder="Your weight in kg..">
 
         <button type="submit" class="signupbtn" onclick="calculateBMI()">Calculate BMI</button>
-<br/><br/>
+<br/><br/><br/><br/>
         <p id="BMI"> </p>
         <p id="BMI-result"> </p>
         </div>
@@ -65,7 +65,7 @@ var height = document.getElementById("height").value;
 var result = "";
 if(weight > 0 && height > 0){	
 var BMI = Math.round(weight/(height/100*height/100));
-document.getElementById("BMI").innerHTML = "Your BMI is" + BMI;
+document.getElementById("BMI").innerHTML = "Your BMI is " + BMI;
 if(BMI < 18.5){
 document.getElementById("BMI-result").innerHTML= "You are too thin.";
 result="That you are too thin.";
@@ -106,9 +106,9 @@ function sendEmail() {
 			function(message) {
 			console.log("Email Status: " + message);
 			if (message == "OK") {
-				document.body.innerHTML += "<br>Email sent - check your junk folder!";
+				document.body.innerHTML += "<br/><br/>Email sent - check your junk folder!";
 			} else {
-				document.body.innerHTML += "<br>" + message;
+				document.body.innerHTML += "<br/><br/>" + message;
 			}
 		}
 		);
