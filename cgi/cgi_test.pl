@@ -46,6 +46,7 @@ print <<HTML;
         <input type="number" id="weight" name="weight" placeholder="Your weight in kg..">
 
         <button type="submit" class="signupbtn" onclick="calculateBMI()">Calculate BMI</button>
+		<button type="submit" class="signupbtn" onclick="calculateBMI()">Email $data{email}</button>
 <br/><br/><br/><br/>
         <p id="BMI"> </p>
         <p id="BMI-result"> </p>
