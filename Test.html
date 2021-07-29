@@ -65,28 +65,32 @@
           var numbers = /[0-9]/g;
           if(name.value.match(numbers)) {  
             
-            alert("Invalid Input")
+            alert("Invalid Input");
+            name.value ="";
           }
           
           // Sanitize for Special Char except @
           var specialchar = /[!#$%^&*+`~=?\|<>/]/g;
           if(name.value.match(specialchar)) {  
             
-            alert("Invalid Input")
+            alert("Invalid Input");
+            name.value ="";
           }
         }
         lname.onkeyup = function() {
           var numbers = /[0-9]/g;
           if(lname.value.match(numbers)) {  
             
-            alert("Invalid Input")
+            alert("Invalid Input");
+            lname.value ="";
           }
           
           // Sanitize for Special Char except @
           var specialchar = /[!#$%^&*+`~=?\|<>/]/g;
           if(lname.value.match(specialchar)) {  
             
-            alert("Invalid Input")
+            alert("Invalid Input");
+            lname.value ="";
           }
         }
 
@@ -94,14 +98,16 @@
           var numbers = /[0-9]/g;
           if(email.value.match(numbers)) {  
             
-            alert("Invalid Input")
+            alert("Invalid Input");
+            email.value ="";
           }
           
           // Sanitize for Special Char except @
           var specialchar = /[!#$%^&*+`~=?\|<>/]/g;
           if(email.value.match(specialchar)) {  
             
-            alert("Invalid Input")
+            alert("Invalid Input");
+            email.value ="";
           }
         }
 
