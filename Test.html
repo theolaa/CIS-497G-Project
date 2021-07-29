@@ -63,28 +63,28 @@
         //Sanitize for numbers
         name.onkeyup = function() {
           var numbers = /[0-9]/g;
-          if(mypass.value.match(numbers)) {  
+          if(name.value.match(numbers)) {  
             
             alert("Invalid Input")
           }
           
           // Sanitize for Special Char except @
           var specialchar = /[!#$%^&*+`~=?\|<>/]/g;
-          if(mypass.value.match(specialchar)) {  
+          if(name.value.match(specialchar)) {  
             
             alert("Invalid Input")
           }
         }
         lname.onkeyup = function() {
           var numbers = /[0-9]/g;
-          if(mypass.value.match(numbers)) {  
+          if(lname.value.match(numbers)) {  
             
             alert("Invalid Input")
           }
           
           // Sanitize for Special Char except @
           var specialchar = /[!#$%^&*+`~=?\|<>/]/g;
-          if(mypass.value.match(specialchar)) {  
+          if(lname.value.match(specialchar)) {  
             
             alert("Invalid Input")
           }
@@ -92,14 +92,14 @@
 
         email.onkeyup = function() {
           var numbers = /[0-9]/g;
-          if(mypass.value.match(numbers)) {  
+          if(email.value.match(numbers)) {  
             
             alert("Invalid Input")
           }
           
           // Sanitize for Special Char except @
           var specialchar = /[!#$%^&*+`~=?\|<>/]/g;
-          if(mypass.value.match(specialchar)) {  
+          if(email.value.match(specialchar)) {  
             
             alert("Invalid Input")
           }
