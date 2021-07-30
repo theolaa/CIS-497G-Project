@@ -115,9 +115,9 @@ function sendEmail() {
 			function(message) {
 			console.log("Email Status: " + message);
 			if (message == "OK") {
-				document.getElementByID("emailbtn").innerHTML += "Email sent - check your junk folder!";
+				document.getElementById("emailbtn").innerHTML += "Email sent - check your junk folder!";
 			} else {
-				document.getElementByID("emailbtn").innerHTML += "<br/><br/>" + message;
+				document.getElementById("emailbtn").innerHTML += "<br/><br/>" + message;
 			}
 		}
 		);
