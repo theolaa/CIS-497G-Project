@@ -55,8 +55,9 @@ print <<HTML;
         <button type="submit" class="signupbtn" onclick="calculateBMI()">Calculate BMI</button>
 		<button type="submit" class="signupbtn" onclick="sendEmail()">Email results to: $data{email}</button>
 <br/><br/><br/><br/>
-        <p id="BMI"> </p>
-        <p id="BMI-result"> </p>
+        <p id="BMI"></p>
+        <p id="BMI-result"></p>
+		<p id="emailbtn"></p>
         </div>
 </div>
 HTML
