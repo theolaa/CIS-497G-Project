@@ -14,12 +14,19 @@ $data{lastname} = $query->param('lastname');
 $data{lastname}=~s/(<([^>]+)>)/""/ig;
 $data{email} = $query->param('email');
 $data{email}=~s/(<([^>]+)>)/""/ig;
+
+# print $query->header;
+print "Content-type: text/html\n\n";
+
+if (($data{firstname} eq '') || ($data{email} eq '')) {
+	print "Missing User Data<br>You will be redirected after five seconds<script>setTimeout(function () {window.location = '../Test.html'}, 5000)</script>";
+
+} else {
+	
 #$data{country} = $query->param('country');
 #$data{psw} = $query->param('psw');
 #$data{psw_repeat} = $query->param('psw_repeat');
  
-# print $query->header;
-print "Content-type: text/html\n\n";
 print <<HTML;
 <!DOCTYPE html>
 <html>
@@ -120,3 +127,5 @@ function sendEmail() {
 </body>
 </html>
 HTML
+
+}
