@@ -19,7 +19,7 @@ $data{email}=~s/(<([^>]+)>)/""/ig;
 print "Content-type: text/html\n\n";
 
 if (($data{firstname} eq '') || ($data{email} eq '')) {
-	print "Missing User Data<br>You will be redirected after five seconds<script>setTimeout(function () {window.location = '../Test.html'}, 5000)</script>";
+	print "Missing User Data<br>You will be redirected after five seconds<script>setTimeout(function () {window.location = '../'}, 5000)</script>";
 
 } else {
 	
