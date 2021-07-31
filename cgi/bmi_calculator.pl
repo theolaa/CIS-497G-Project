@@ -105,22 +105,20 @@ function sendEmail() {
 	}
 	else{
 		Email.send({
-		Host: "smtp.elasticemail.com",
-		Username : "account_validation\@learn.taliaq.com",
-		Password : "8CDE0ED2F1E5FA245FBCD6EE5B35CD9D0942",
-		To : "$data{email}",
-		From :"theolaanstra\@gmail.com",
-		Subject : "BMI Results",
-		Body : "Hi \\n Your BMI result says that \\"" + result + "\\"\\r\\nYour BMI is " + bmi
+    		SecureToken : "63a9ea58-9372-4a8d-bb2f-92af80ace97a",
+    		To : "$data{email}",
+    		From : "theolaanstra\@gmail.com",
+    		Subject : "BMI Results",
+    		Body : "Hi \\n Your BMI result says that \\"" + result + "\\"\\r\\nYour BMI is " + bmi
 		}).then(
 			function(message) {
-			console.log("Email Status: " + message);
-			if (message == "OK") {
-				document.getElementById("emailbtn").innerHTML = "Email sent - check your junk folder!";
-			} else {
-				document.getElementById("emailbtn").innerHTML = "<br/><br/>" + message;
+				console.log("Email Status: " + message);
+				if (message == "OK") {
+					document.getElementById("emailbtn").innerHTML = "Email sent - check your junk folder!";
+				} else {
+					document.getElementById("emailbtn").innerHTML = "<br/><br/>" + message;
+				}
 			}
-		}
 		);
 	}
 }
