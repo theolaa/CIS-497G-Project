@@ -38,7 +38,7 @@ print <<HTML;
 <body>
 <h1> Hi </h1>
 HTML
-print ("<h1> $data{firstname}, Congratulations your account is successfully created! </h1>");
+print ("<h1> <span id='name'>$data{firstname}</span>, Congratulations your account is successfully created! </h1>");
 print ("<h2> Lets calculate your BMI! </h2>");
 print <<HTML;
 
@@ -99,6 +99,7 @@ alert("Please Fill in everything correctly");
 function sendEmail() {
 	result = document.getElementById("BMI-result").innerText;
 	bmi = document.getElementById("BMI").innerText;
+	name = document.getElementById("name").innerText;
 	if (result == "" && bmi == "")
 	{
 		alert("Enter Height & Weight");
@@ -109,7 +110,7 @@ function sendEmail() {
     		To : "$data{email}",
     		From : "theolaanstra\@gmail.com",
     		Subject : "BMI Results",
-    		Body : "Hi \\n Your BMI result says that \\"" + result + "\\"\\r\\nYour BMI is " + bmi
+    		Body : "Hi " + name + ",\\n Your BMI result says that \\"" + result + "\\"\\r\\nYour BMI is " + bmi
 		}).then(
 			function(message) {
 				console.log("Email Status: " + message);
