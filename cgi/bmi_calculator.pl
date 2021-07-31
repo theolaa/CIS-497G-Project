@@ -110,7 +110,7 @@ function sendEmail() {
     		To : "$data{email}",
     		From : "theolaanstra\@gmail.com",
     		Subject : "BMI Results",
-    		Body : "Hi " + name + ",\\n Your BMI result says that \\"" + result + "\\"\\r\\nYour BMI is " + bmi
+    		Body : "Hi " + name + ",\\n Your BMI result says that \\"" + result + "\\"\\r\\n" + bmi
 		}).then(
 			function(message) {
 				console.log("Email Status: " + message);
