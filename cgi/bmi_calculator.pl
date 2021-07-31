@@ -10,13 +10,10 @@ my $query = new CGI();
 my %data;
 $data{firstname} $query->param('firstname');
 $data{firstname}=~s/(<([^>]+)>)//ig;
-$data{firstname}=~s/^\s+|\s+$//g;
 $data{lastname}=$query->param('lastname');
 $data{lastname}=~s/(<([^>]+)>)//ig;
-$data{lastname}=~s/^\s+|\s+$//g;
 $data{email}=$query->param('email');
 $data{email}=~s/(<([^>]+)>)//ig;
-$data{email}=~s/^\s+|\s+$//g;
 
 # print $query->header;
 print "Content-type: text/html\n\n";
