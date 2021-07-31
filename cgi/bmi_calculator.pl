@@ -9,17 +9,20 @@ my $query = new CGI();
  
 my %data;
 $data{firstname} =$query->param('firstname');
-$data{firstname}=~s/(<([^>]+)>)/""/ig;
+$data{firstname}=~s/(<([^>]+)>)//ig;
+$data{firstname} =~ s/^\s+|\s+$//g
 $data{lastname} = $query->param('lastname');
-$data{lastname}=~s/(<([^>]+)>)/""/ig;
+$data{lastname}=~s/(<([^>]+)>)//ig;
+$data{lastname} =~ s/^\s+|\s+$//g
 $data{email} = $query->param('email');
-$data{email}=~s/(<([^>]+)>)/""/ig;
+$data{email}=~s/(<([^>]+)>)//ig;
+$data{email} =~ s/^\s+|\s+$//g
 
 # print $query->header;
 print "Content-type: text/html\n\n";
 
 if (($data{firstname} eq '') || ($data{email} eq '')) {
-	print "Missing User Data<br>You will be redirected after five seconds<script>setTimeout(function () {window.location = '../'}, 5000)</script>";
+	print "Missing or Invalid User Data<br>You will be redirected after five seconds<script>setTimeout(function () {window.location = '../'}, 5000)</script>";
 
 } else {
 	
