@@ -1,4 +1,4 @@
-#!/usr/bin/perl -T
+#!/usr/bin/perl -w -T
 use strict;
 use warnings;
 use 5.008;
