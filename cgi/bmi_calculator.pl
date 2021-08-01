@@ -34,6 +34,7 @@ print <<HTML;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../style.css">
 <script src="https://smtpjs.com/v3/smtp.js"></script>
+<title>BMI Calculator</title>
 </head>
 <body>
 <h1> Hi </h1>
@@ -47,7 +48,7 @@ print <<HTML;
           <p>Please fill in the details to find your BMI.</p>
           <hr>
           <label for="Height">Height</label>
-        <input type="number" id="height" name="height" placeholder="Your height  in cm ..">
+        <input type="number" id="height" name="height" placeholder="Your height in cm..">
 
         <label for="weight">Weight</label>
         <input type="number" id="weight" name="weight" placeholder="Your weight in kg..">
